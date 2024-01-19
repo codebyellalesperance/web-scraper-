@@ -7,11 +7,14 @@
     
     /* Styling for the header */
     .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        display: flex; /* Enables Flexbox */
+        justify-content: space-between; /* Spaces out the logo and the nav bar */
+        align-items: center; /* Vertically centers items in the header */
         background-color: #ffffff;
         padding: 10px;
+        position: sticky;
+        top: 0;
+        z-index: 1000; 
     }
     
     /* Logo style */
@@ -21,12 +24,15 @@
     
     /* Navigation bar styling */
     nav ul {
+        margin-top: 10px;
         list-style-type: none;
         display: flex;
     }
     
     nav ul li {
-        margin-left: 100px;
+        
+        margin-left: 70px;
+        
     }
     
     nav ul li:last-child {
@@ -38,6 +44,23 @@
         color: #507bb3;
     }
     
+    nav ul li a.highlight {
+        background-color: white; /* White background */
+        color: #D90707; /* Navy text */
+        border: 2px solid #D90707; /* Navy border */
+        padding: 10px 20px; /* Top & Bottom, Left & Right padding */
+        text-decoration: none; /* Removes underline from links */
+        font-size: 16px; /* Font size */
+        display: inline; /* Aligns padding and allows height/width adjustments */
+        cursor: pointer; /* Changes cursor to pointer on hover */
+        transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+    }
+
+    nav ul li a.highlight:hover {
+        background-color: #D90707; /* Navy background on hover */
+        color: white; /* White text on hover */
+    }
+
     /* Basic styling for main content */
     body {
         font-family: Newsreader, sans-serif;
@@ -58,8 +81,7 @@
     }
 
     h2 {
-        color: #507bb3;
-        
+        color: #D90707;
         font-size: 30px;
         text-align: right;
         padding-right: 1150px;
@@ -67,6 +89,8 @@
     }
     
     p {
+        scroll-padding-top: 20px;
+        scroll-padding-bottom: 20px;
         color: #507bb3;
         margin-top: 30px;
         padding-left: 150px;
@@ -132,11 +156,11 @@
 .email-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #507bb3;
-    color: white;
+    background-color: white; /* White background */
+    color: #D90707; /* Navy text */
+    border: 2px solid #D90707; /* Navy border */
   
     text-decoration: none;
-    border-radius: 5px;
     font-weight: bold;
 }
 .email-button:hover {
