@@ -1,171 +1,232 @@
 /* Basic reset */
 * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    
-    /* Styling for the header */
-    .header {
-        display: flex; /* Enables Flexbox */
-        justify-content: space-between; /* Spaces out the logo and the nav bar */
-        align-items: center; /* Vertically centers items in the header */
-        background-color: #ffffff;
-        padding: 10px;
-        position: sticky;
-        top: 0;
-        z-index: 1000; 
-    }
-    
-    /* Logo style */
-    .header img {
-        height: 70px;
-    }
-    
-    /* Navigation bar styling */
-    nav ul {
-        margin-top: 10px;
-        list-style-type: none;
-        display: flex;
-    }
-    
-    nav ul li {
-        
-        margin-left: 70px;
-        
-    }
-    
-    nav ul li:last-child {
-        margin-right: 70px;
-    }
-    
-    nav ul li a {
-        text-decoration: none;
-        color: #507bb3;
-    }
-    
-    nav ul li a.highlight {
-        background-color: white; /* White background */
-        color: #D90707; /* Navy text */
-        border: 2px solid #D90707; /* Navy border */
-        padding: 10px 20px; /* Top & Bottom, Left & Right padding */
-        text-decoration: none; /* Removes underline from links */
-        font-size: 16px; /* Font size */
-        display: inline; /* Aligns padding and allows height/width adjustments */
-        cursor: pointer; /* Changes cursor to pointer on hover */
-        transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
-    }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    nav ul li a.highlight:hover {
-        background-color: #D90707; /* Navy background on hover */
-        color: white; /* White text on hover */
-    }
+/* Styling for the header */
+.header {
+    display: flex; /* Enables Flexbox */
+    justify-content: space-between; /* Spaces out the logo and the nav bar */
+    align-items: center; /* Vertically centers items in the header */
+    background-color: #ffffff;
+    padding: 10px 20px; /* Adjusted padding for smaller screens */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-    /* Basic styling for main content */
-    body {
-        font-family: Newsreader, sans-serif;
-        line-height: 1.6;
-        padding: 20px;
-    }
-    
-    /* Text alignment */
-    h1 {
-        font-family: Newsreader, sans-serif;
-        color: #507bb3;
-        font-size: 50px;
-        line-height: 2; 
-        text-align: right;
-        padding-right: 20px;
-        margin-top: 70px;
-        margin-bottom: 30px;
-    }
+/* Logo style */
+.header img {
+    height: 70px;
+}
 
-    h2 {
-        color: #D90707;
-        font-size: 30px;
-        text-align: right;
-        padding-right: 1100px;
-        margin-top: 30px;
-    }
-    
-    p {
-        scroll-padding-top: 20px;
-        scroll-padding-bottom: 20px;
-        color: #507bb3;
-        margin-top: 30px;
-        padding-left: 150px;
-        padding-right: 150px;
-        margin-bottom: 30px;
-    }
-    
-    /* Text and Image Container */
+/* Navigation bar styling */
+nav ul {
+    margin-top: 10px;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap; /* Allows the nav items to wrap on smaller screens */
+}
+
+nav ul li {
+    margin: 10px 15px; /* Adjusted for better spacing on small screens */
+}
+
+/* Navigation bar styling */
+nav ul li a {
+    text-decoration: none; /* Removes underline from links by default */
+    color: #507bb3; /* Sets the default text color */
+    font-size: 20px; /* Adjusts the font size of the navigation text */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition for color and text-decoration */
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Adds underline on hover */
+    /* Optional: Change color on hover to enhance the effect */
+    color: #D90707; /* Example: Changes the link color on hover */
+}
+
+
+nav ul li a.highlight {
+    background-color: white;
+    color: #D90707;
+    border: 2px solid #D90707;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+
+nav ul li a.highlight:hover {
+    background-color: #D90707;
+    color: white;
+}
+
+/* Basic styling for main content */
+body {
+    padding-top: 40px;
+    font-family: 'Newsreader', sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+h1 {
+    color: #507bb3;
+    margin: 20px 0; /* Uniform margin for h1 and h2 */
+    font-size: 2.5rem; /* Responsive font size */
+    line-height: 1.2; 
+    text-align: right; /* Centered text for all screens */
+}
+
+h2 {
+    margin-top: 20px;
+    color: #507bb3;
+    margin: 20px 0; /* Uniform margin for h1 and h2 */
+    font-size: 1.75rem; /* Responsive font size */
+    text-align: center; /* Centered text for all screens */
+}
+
+p, li  {
+    color: #507bb3;
+    margin: 30px auto; /* Centered margin */
+    padding: 0 15px; /* Padding on smaller screens */
+    text-align: justify; /* Improved readability */
+}
+
+/* Text and Image Container */
+.text-image-container {
+    display: flex;
+    flex-direction: column; /* Stacks elements vertically on smaller screens */
+    text-align: right; /* Centers the items horizontally */
+    justify-content: center; /* Centers the items vertically for when flex-direction is row */
+    margin-bottom: 20px;
+}
+
+.right-image {
+    width: 80%; /* Adjust based on your preference */
+    max-width: 400px; /* Keeps image size reasonable */
+    margin: 20px 0; /* Adds space above and below the image */
+    align-self: center; /* This ensures the image itself is centered in the flex container */
+}
+
+/* Responsive Design for larger screens */
+@media (min-width: 768px) {
     .text-image-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 20px;
+        flex-direction: row; /* Lays out the container’s items in a row */
+        align-items: center; /* Keeps items aligned in the center vertically */
+        justify-content: space-evenly; /* Spaces out the logo and the nav bar */
+
     }
-    
-    .text-content {
-        flex: 1;
-    }
-    
+
     .right-image {
-        width: 60%;
-        max-width: 400px;
-        margin-right: 150px; /* Adjusted margin */
-        margin-top: 40px;
-    }
-    
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .text-image-container {
-            flex-direction: column;
-        }
-    
-        .right-image {
-            width: 100%;
-            max-width: none;
-            margin-left: 0;
-            margin-top: 200px;
-        }
+        margin-left: 10px; /* Adjust margin as needed for spacing on larger screens */
+        margin-top: 100px; 
+        margin-bottom: 100px; 
+        margin-right: 300px; 
+        size-adjust: 300%;
 
-        p {
-            text-align: left;
-        }
-    
-        
+
     }
 
-    @keyframes blink {
-        50% { border-color: transparent; }
+    p, li {
+        padding: 0 50px; /* Increased padding on larger screens */
     }
-    
-    .typing {
-        
-        font-size: 50px; /* Adjust font size as needed */
+
+    nav ul li {
+        margin-left: 20px;
         margin-right: 20px;
-        margin-top: -20px;
-        border-right: 2px solid; /* Make the cursor thinner */
-        animation: blink 0.75s step-end infinite;
-        
     }
 
+    h1 {
+        text-align: right; /* Right-aligned titles for larger screens */
+        margin-left: 15%;
+    }
+    
+    h2 {
+        margin-top: 70px;
+        margin-bottom: 70px;
 
+        text-align: left; /* Right-aligned titles for larger screens */
+        margin-left: 7%;
+    }
+
+    h4 {
+        text-align: center;
+    }
+}
 
 .email-button {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: white; /* White background */
-    color: #D90707; /* Navy text */
-    border: 2px solid #D90707; /* Navy border */
-  
+    padding: 10px 200px;
+    background-color: white;
+    color: #D90707;
+    border: 2px solid #D90707;
     text-decoration: none;
     font-weight: bold;
-}
-.email-button:hover {
-    background-color: #507bb3;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
 }
 
+.email-button:hover {
+    background-color: #507bb3;
+    color: white;
+}
+
+
+
+
+
+
+
+.project-container {
+    display: flex; /* Enables Flexbox layout */
+    /* justify-content: center; Centers the items horizontally */
+    align-items: center; /* Centers the items vertically (if needed) */
+    flex-wrap: wrap; /* Allows items to wrap in smaller screens */
+    gap: 40px; /* Adds space between the items */
+    border: 3px solid transparent; /* Transparent border to avoid shifting on hover */
+    justify-content: space-evenly; /* Spaces out the logo and the nav bar */
+
+    transition: border-color 0.3s ease; /* Smooth transition for the border color */
+
+}
+
+.project-link:hover {
+    border-color: #507bb3; /* Changes border color on hover */
+}
+
+
+.project-container img {
+    display: block; /* Removes bottom space/margin under images */
+    max-width: 100%; /* Ensures images are responsive */
+    height: auto; /* Maintains aspect ratio */
+}
+
+
+
+
+/* Footer styling */
+footer {
+    background-color: #507bb3; /* Adjust to match your design */
+    padding: 40px 20px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center; /* Centers the footer content horizontally */
+    align-items: center; /* Centers the footer content vertically */
+}
+
+.footer-content a {
+    display: inline-block; /* Aligns images next to each other */
+    margin: 0 10px; /* Adds some space between the images */
+}
+
+.footer-content img {
+    transition: transform 0.3s ease; /* Smooth transition for a zoom effect */
+}
+
+.footer-content img:hover {
+    transform: scale(1.1); /* Slightly enlarges the image on hover */
+}
 
 
